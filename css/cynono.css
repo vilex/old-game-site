@@ -1,89 +1,59 @@
-*{
-	margin: 0px;
-	padding: 0px;
+html {
+	font-size: 62.5%;/* 10/16*100% = 62.5% */
 }
-html,body{
+body {
+	font-size: 1.4rem;
+	background-image: url(http://pic.shejiben.com/caizhi/day_151203/20151203_02f1b490288c34e57a70gGHhXeDfp6d2.jpg);
+}
+
+html,body {
 	width: 100%;
 	height: 100%;
-	color: #FFF;
-}
-ul li{
-	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
 a {
 	text-decoration: none;
 	color: #FFF;
 }
-
-/*
-	top
-*/
-.top{
-	background-color: #000;
+/*--------------------------------*/
+.fixed {
 	position: fixed;
+}
+.relative {
+	position: relative;
+}
+.x-all {
 	width: 100%;
-	height: 40px;
+}
+.y-all {
+	height: 100%;
+}
+.x-center {
+	margin: 0 auto;
+}
+.y-center {
+
+}
+
+
+
+
+/*---------------------------------*/
+.cs-top {
+	height: 48px;
+	background-color: #3399ff;
 	z-index: 999;
 }
-.top > ul {
-	display: box;
-	display: -webkit-box;
+.cs-top-nc {
+	width: 960px;
 }
-.top-right{
-	right: 0px;
-}
-.top-container {
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-.top-container-left {
+.cs-top-in {
+	font-size: 2.8rem;
 	position: absolute;
-	left: 10%;
-	display: box;
-	display: -webkit-box;
 	bottom: 10px;
 }
-.top-container-right {
-	position: absolute;
-	right: 10%;
-	display: box;
-	display: -webkit-box;
-	bottom: 10px;
+.cs-bg-box {
+	width: 10px;
+	height: 10px;
 }
-
-/*
-	导航条
-*/
-nav{height: 80px;background-color: darkslateblue;}
-
-/*
-	内容
-*/
-.content{width: 960px;margin: 0 auto;}
-.content-list{display: -webkit-box;}
-.content-list-item{
-	width: 200px;
-	height: 300px;
-	border: 2px solid #000;
-	margin: 0px 10px;
-	overflow: hidden;
-	position: relative;
-}
-.content-list-item : hover {  }
-.content-list-item > hr {width: 90%;margin: 0 auto;}
-.content-list-item > div {width: 100%;text-align: center;margin-top: 10px;}
-.content-list-item-sketch {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0px;
-	transition: .7s all;
-	-webkit-transition: .7s all;
-	-moz-transition: .7s all;
-}
-.content-list-item-sketch-img {width: 100%;height: 100%;}
-.content-list-item:hover .content-list-item-sketch {
-	top: 100%;
-}
-
