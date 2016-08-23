@@ -11,7 +11,7 @@ function bg_box_style() {
 	var g=Math.floor(Math.random()*255);
 	var b=Math.floor(Math.random()*255);
 	var rgb='rgb('+r+','+g+','+b+')';
-	return "position:absolute;width:40px;height:40px;top:"+rw+"px;left:"+rh+"px;background-color:"+rgb+";-moz-transition: all 1s;-webkit-transition: all 1s;-o-transition: all 1s;transition: all 1s;"
+	return "position:absolute;width:20px;height:20px;top:"+rw+"px;left:"+rh+"px;background-color:"+rgb+";-moz-transition: all 1s;-webkit-transition: all 1s;-o-transition: all 1s;transition: all 1s;"
 }
 function bg_move(){
 	for(var i = 0; i < bg_obj.boxArr.length; i++){
@@ -23,7 +23,7 @@ function bg_move(){
 
 function bg_init() {
 	bg_obj.bgc = document.getElementById('i-bg');
-	var boxNum = 10;
+	var boxNum = 50;
 	for(var i = 0; i < boxNum; i++){
 		var box = document.createElement('div');
 		box.style.cssText = bg_box_style();

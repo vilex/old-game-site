@@ -3,7 +3,7 @@ html {
 }
 body {
 	font-size: 1.4rem;
-	background-image: url(http://pic.shejiben.com/caizhi/day_151203/20151203_02f1b490288c34e57a70gGHhXeDfp6d2.jpg);
+	background-image: url(http://www.coolsc.net/imguploads/Image/0902/maps/21/5.jpg);
 }
 
 html,body {
@@ -23,6 +23,9 @@ a {
 .relative {
 	position: relative;
 }
+.absolute {
+	position: absolute;
+}
 .x-all {
 	width: 100%;
 }
@@ -34,6 +37,18 @@ a {
 }
 .y-center {
 
+}
+.hidden {
+	overflow: hidden;
+}
+.a-center {
+	text-align: center;
+}
+.right {
+	float: right;
+}
+.border {
+	border: 1px solid #000;
 }
 
 
@@ -53,7 +68,83 @@ a {
 	position: absolute;
 	bottom: 10px;
 }
+.cs-bg {
+	z-index: -1;
+}
 .cs-bg-box {
 	width: 10px;
 	height: 10px;
+}
+.cs-space-top {
+	height: 60px;
+}
+.cs-content {
+	width: 960px;
+	z-index: 5;
+	padding: 2rem;
+	background-image: url(http://imgsrc.baidu.com/forum/pic/item/a08b87d6277f9e2fd02b68411f30e924b899f359.jpg);
+}
+.cs-content-li {
+	width: 100%;
+	margin-top: 20px;
+}
+.cs-content-ti {
+	font-size: 2.4rem;
+	color: #FFF;
+	text-shadow: 0 1px 1px #000;
+}
+.cs-content-ge {
+	height: 310px;
+	display: box;
+	display: -o-box;
+	display: -moz-box;
+	display: -webkit-box;
+	box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	-webkit-box-orient: horizontal;
+}
+.cs-content-im {
+	box-flex:1;
+	-moz-box-flex:1;
+	-webkit-box-flex:1;
+	border-color: #000;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.cs-content-im:hover .cs-im {
+	top: 0%;
+}
+.cs-content-im > div {
+	background-color: #f1f5f0;
+	width: 100%;
+	height: 100%;
+}
+.cs-content-im > div > img {
+	width: 220px;
+	height: 280px;
+}
+.cs-content-im-ym {
+	position: relative;
+}
+.cs-item-bg {
+	background-color: rgba(0,0,0,0.6);
+}
+.cs-im {
+	top: 92%;
+	transition: all 1s;
+	-moz-transition: all 1s; /* Firefox 4 */
+	-webkit-transition: all 1s; /* Safari 和 Chrome */
+	-o-transition: all 1s; 
+}
+.cs-game-sm {
+	font-size: 1.6rem;
+	color: #FFFFFF;
+	margin-top: 3px;
+}
+.cs-im-enter {
+	background-color: #ff823c;
+}
+.cs-im-ev {
+	position: absolute;
+	bottom: 10px;
 }
