@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8;charset=utf-8">
+
+<title>抓住它!</title>
+
+ 
+
+<style>
+
+ 
+
+*{
+
+font-family:Arial;
+
+}
+
+ 
+
+canvas{
+
+margin:0px;
+
+padding:0px;
+
+border-right:#333 dashed;
+
+border-bottom:#333 dashed;
+
+}
+
+ 
+
+body{
+
+margin:0px;
+
+background:#fc0;
+
+}
+
+ 
+
+.label {
+
+font-weight:bold;
+
+}
+
+ 
+
+.label span {
+
+font-weight:normal;
+
+}
+
+img {
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+z-index:1000;
+
+border:0px;
+
+}
+
+ 
+
+</style>
+
+ 
+
+<script type="text/javascript">
+
+ 
+
+var ctx;
+
+ 
+
+var balls = new Array();
+
+ 
+
+var mouse = {x:-100, y:-100};
+
+ 
+
+var prey = {x:Math.random()*310, y:Math.random()*310};
+
+ 
+
+var circle = Math.PI * 2
+
+ 
+
+var tries = 1;
+
+var score = 0;
+
+var max_score = 0;
+
+ 
+
+var inc_score = 15;
+
+ 
+
+function $(id) {
+
+return document.getElementById(id);
+
+}
+
+ 
+
+function updateStat() {
+
+ 
+
+$('tries').innerHTML = tries;
+
+$('score').innerHTML = score;
+
+ 
+
+$('max_score').innerHTML = max_score;
+
+}
+
+ 
+
+function Ball(x, y, xsee, ysee) {
+
+ 
+
+this.x = x;
+
+this.y = y;
+
+this.xsee = xsee;
+
+this.ysee = ysee;
+
+ 
+
+this.move = function() {
+
+ 
+
+if(this.x > 315) {
+
+this.x = 315;
+
+this.xsee = -this.xsee;
+
+} else if(this.x < 5) {
+
+this.x = 5;
+
+this.xsee = -this.xsee;
+
+}
+
+ 
+
+if(this.y > 315) {
+
+this.y = 315;
+
+this.ysee = -this.ysee;
+
+} else if(this.y < 5) {
+
+this.y = 5;
+
+this.ysee = -this.ysee;
+
+}
+
+ 
+
+this.x+= this.xsee;
+
+this.y+= this.ysee;
+
+ 
+
+ctx.beginPath();
+
+ctx.arc(this.x, this.y, 5, 0, circle, true);
+
+ctx.closePath();
+
+ctx.fill();
+
+}
+
+}
+
+ 
+
+function createBall() {
+
+ 
+
+do {
+
+x = Math.random() * 315;
+
+y = Math.random() * 315;
+
+} while(prey.x <= x + 35 && x <= prey.x + 55 && prey.y <= y + 35 && y <= prey.y + 55);
+
+ 
+
+balls.push(new Ball(x, y, Math.random() * 5.5 - 2.75, Math.random() * 5.5 - 2.75));
+
+}
+
+ 
+
+function init() {
+
+ctx = $('canvas').getContext('2d');
+
+window.setInterval(clock, 20);
+
+}
+
+ 
+
+function clock() {
+
+ 
+
+ctx.clearRect(0, 0, 320, 320);
+
+ 
+
+ctx.fillStyle = "#c00";
+
+ctx.fillRect(prey.x, prey.y, 20, 20);
+
+ 
+
+ctx.beginPath();
+
+ctx.arc(mouse.x, mouse.y, 10, 0, circle, true);
+
+ctx.closePath();
+
+ctx.fill();
+
+ 
+
+ctx.fillStyle = "#333";
+
+for(var i = 0; i < balls.length; i++) {
+
+balls[i].move();
+
+ 
+
+if(
+
+balls[i].x <= mouse.x + 15 && mouse.x <= balls[i].x + 15 &&
+
+balls[i].y <= mouse.y + 15 && mouse.y <= balls[i].y + 15 &&
+
+((mouse.x-balls[i].x)*(mouse.x-balls[i].x) + (mouse.y-balls[i].y)*(mouse.y-balls[i].y)) <= 225) {
+
+balls = new Array();
+
+ 
+
+if(max_score < score) {
+
+max_score = score;
+
+}
+
+ 
+
+score = 0;
+
+tries++;
+
+ 
+
+updateStat();
+
+}
+
+}
+
+ 
+
+if(inc_score > 5.5) inc_score-= 0.2;
+
+}
+
+ 
+
+document.onclick = function() {
+
+ 
+
+for(var i=0; i < balls.length; i++) {
+
+balls[i].xsee =-balls[i].xsee;
+
+balls[i].ysee =-balls[i].ysee;
+
+}
+
+}
+
+ 
+
+document.onmousemove = function(e) {
+
+ 
+
+mouse.x = e.pageX;
+
+mouse.y = e.pageY;
+
+if(prey.x <= mouse.x + 10 && mouse.x <= prey.x + 30 && prey.y <= mouse.y + 10 && mouse.y <= prey.y + 30) {
+
+prey = {x:Math.random()*300, y:Math.random()*300}
+
+createBall();
+
+score+= Math.floor(inc_score);
+
+inc_score = 15;
+
+updateStat();
+
+}
+
+}
+
+ 
+
+</script>
+
+ 
+
+</head>
+
+ 
+
+<body onload="init()">
+
+<canvas id="canvas" height="320" width="320">how can you use the internet?</canvas>
+
+ 
+
+<div class="label">得分: <span id="score">0</span></div>
+
+ 
+
+<div class="label">最高分: <span id="max_score">0</span></div>
+
+ 
+
+<div class="label">死亡次数: <span id="tries">0</span></div>
+
+ 
+
+<script type="text/javascript">
+
+(function(){function l(a){if(window._cc_done===undefined){a=a.bf;for(var c=0,b=j.length;c<b;c++)j[c](a);c="";b=false;for(var e in a){var d=a[e];if(d!==undefined&&d!==""){if(b)c+="&";else b=true;c+=e;c+="=";c+=a[e]}}var f=new Image(1,1);f.src="http://track.trafficmaxx.de/track.php?"+c;f.onload=function(){f.onload=h};window._cc_done=1}}var g=encodeURIComponent,h=null,i=[{name:"adobe",test:function(a,c,b){if(b.version)c.a=b.version;else if(a&&a[1])c.a=a[1];return 2}},{name:"realplayer",test:function(a, c,b){if(b.version)c.r=b.version;else if(a&&a[1])c.r=a[1];return 3}},{name:"quicktime",test:function(a,c,b){if(b.version)c.q=b.version;else if(a&&a[1])c.q=a[1];return 4}},{name:"flash",test:function(a,c,b){if(b.version)c.f=b.version;else if(a&&a[1])c.f=a[1];return 5}},{name:"windows media player",test:function(a,c,b){if(b.version)c.w=b.version;else if(a&&a[1])c.w=a[1];return 6}},{name:"google gears",test:function(a,c,b){if(b.version)c.g=b.version;else if(a&&a[1])c.g=a[1];return 7}},{name:"divx",test:function(a, c,b){if(b.version)c.x=b.version;else if(a&&a[1])c.x=a[1];return 9}},{name:"silverlight",test:function(a,c,b){if(b.version)c.s=b.version;else if(a&&a[1])c.s=a[1];return 10}},{name:"java plug-in",test:function(a,c,b){if(b.version)c.j=b.version;else if(a&&a[1])c.j=a[1];return 11}},{name:"google earth",test:function(a,c,b){if(b.version)c.e=b.version;else if(a&&a[1])c.e=a[1];return 12}}],j=[function(a){a.t=document.title?g(document.title):g(window.location.href.split("?")[0])},function(a){if(screen.width)a.s= screen.width+"_"+screen.height+"_"+Math.min(screen.colorDepth,24)},function(a){if(navigator)if(navigator.language)a.l=navigator.language;else if(navigator.browserLanguage)a.l=navigator.browserLanguage;else if(navigator.userLanguage)a.l=navigator.userLanguage},function(a){try{if(top.document&&top.document.referrer)a.r=g(top.document.referrer)}catch(c){}if(!a.r&&document.referrer)a.r=g(document.referrer)},function(a){a.z=Math.floor((new Date).getTime()/1E3)},function(a){a.x=Math.round(Math.random()* 1147483647)+1E9},function(a){if(window.location.hostname)a.h=g(window.location.hostname)},function(a){if(window.location.pathname)a.u=g(window.location.pathname)},function(a){for(var c=document.getElementsByTagName("meta"),b=0;b<c.length;b++)switch(c[b].getAttribute("name")){case "robots":a.bot=c[b].getAttribute("content");break;case "description":a.des=c[b].getAttribute("content")}c=document.getElementsByTagName("link");for(b=0;b<c.length;b++)if(c[b].getAttribute("rel")==="canonical"){a.can=c[b].getAttribute("href"); break}},function(a){var c={to:function(){var k="";for(d in this)if(typeof this[d]!="function")k+=d+"("+this[d]+")";return k}};if(navigator){a.n=navigator.cookieEnabled?1:0;if(navigator.plugins){var b=navigator.plugins;if(b.length>0)for(var e=0;e<b.length;e++)for(var d=0;d<i.length;d++){var f=b[e].name+b[e].description;if(-1!=f.toLowerCase().indexOf(i[d].name)){a.n|=1<<i[d].test(/([0-9._]{3,})/.exec(f),c,b[e]);break}}}}else{a.n=0;b=h;try{b=new ActiveXObject("AcroPDF.PDF")}catch(m){}if(!b)try{b=new ActiveXObject("PDF.PdfCtrl")}catch(n){}if(b){a.n|= 4;c.a=b.GetVersions().split(",")[0].split("=")[1]}b=h;try{b=new ActiveXObject("ShockwaveFlash.ShockwaveFlash")}catch(o){}if(b){a.n|=32;c.f=b.GetVariable("$version").substring(4)}b=h;try{b=new ActiveXObject("WMPlayer.OCX")}catch(p){}if(b){a.n|=64;c.w=b.versionInfo}b=h;try{b=new ActiveXObject("QuickTime.QuickTime")}catch(q){}if(b)a.n|=16;try{b=new ActiveXObject("QuickTimeCheckObject.QuickTimeCheck")}catch(r){}if(b){a.n|=16;f=b.QuickTimeVersion.toString(16);c.q=f.substring(0,1)+"."+f.substring(1,3)}e= ["rmocx.RealPlayer G2 Control","rmocx.RealPlayer G2 Control.1","RealPlayer.RealPlayer(tm) ActiveX Control (32-bit)","RealVideo.RealVideo(tm) ActiveX Control (32-bit)","RealPlayer"];b=h;for(d=0;d<e.length;d++){try{b=new ActiveXObject(e[d])}catch(s){continue}if(b){a.n|=8;c.r=b.GetVersionInfo();break}}}a.p=c.to()}];window._cc={bf:{y:""},getTracker:function(a){this.bf.c=a;return this},trackPageview:function(a){this.bf.d=a;if(window.location&&(window.location.protocol=="http:"||window.location.protocol== "https:"))l(this)},trackVariable:function(a,c){this.bf.y+=a+"('"+g(c)+"')";return this},trackSection:function(a){this.bf.a=a;return this},trackHTTPStatus:function(a){a=parseInt(a,10);if(a!=200&&100<=a&&a<600)this.bf.e=a;return this}}})();
+
+</script>
+
+</body>
+
+</html>

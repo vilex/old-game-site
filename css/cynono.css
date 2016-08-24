@@ -140,11 +140,15 @@ a {
 	font-size: 1.6rem;
 	color: #FFFFFF;
 	margin-top: 3px;
+	font-family: "微软雅黑","华文细黑",Arial, Helvetica, sans-serif;
 }
 .cs-im-enter {
 	background-color: #ff823c;
+	height: 38px;
+	line-height: 38px;
 }
 .cs-im-ev {
 	position: absolute;
 	bottom: 10px;
+	left: 0px;
 }
