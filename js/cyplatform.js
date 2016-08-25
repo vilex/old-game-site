@@ -15,7 +15,7 @@ function IsPC() {
 }
 
 if(IsPC()){
-	window.location.href = 'pc/index.html';
+	window.location.href = 'p/index.html';
 }else{
-	window.location.href = 'movie/index.html';
+	window.location.href = 'm/index.html';
 }
