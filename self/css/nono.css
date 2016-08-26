@@ -1,0 +1,13 @@
+html,body{
+	margin: 0px;
+	padding: 0px;
+}
+.header {
+	height: 48px;
+	width: 100%;
+}
+.content {}
+.footer {}
+.bg-dark {
+	background-color: #000;	
+}
