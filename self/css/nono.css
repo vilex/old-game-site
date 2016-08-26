@@ -1,9 +1,14 @@
 html,body{
+	width: 100%;
+	height: 100%;
+}
+html,body{
 	margin: 0px;
 	padding: 0px;
 }
 .header {
-	height: 48px;
+	height: 10%;
+	min-height: 48px;
 	width: 100%;
 }
 .content {}
