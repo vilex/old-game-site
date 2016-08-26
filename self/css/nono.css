@@ -2,17 +2,27 @@ html,body{
 	width: 100%;
 	height: 100%;
 }
-html,body{
+html,body,div,h1{
 	margin: 0px;
 	padding: 0px;
 }
 .header {
-	height: 10%;
+	height: 5%;
 	min-height: 48px;
 	width: 100%;
 }
 .content {}
 .footer {}
+
+/* color */
+.color-dark {
+	color: #000;
+}
+.color-white {
+	color: #FFF;
+}
+
+
 .bg-dark {
 	background-color: #000;	
 }
