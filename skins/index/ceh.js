@@ -1,3 +1,4 @@
+return null;
 slider=document.getElementById("xinplist");
 var py=0;
 var nn,xp,yp,time,isScrolling;

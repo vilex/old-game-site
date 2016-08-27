@@ -63,8 +63,8 @@
                         var itemid;
                         for(var i = 0; i < homelist.length; i++){
                             itemid = homelist[i];
-                            
-                            ele += '<div class="game-item" data-url="./g-sm.html?name=ddd">';
+
+                            ele += '<div class="game-item" data-url="./g-sm.html?id=' + itemid + '">';
                             ele += '<figure>';
                             ele += '<img src="' + basepath + itemid + '/icon.jpg" alt="战斗补砖块">';
                             ele += '<figcaption>';
@@ -121,7 +121,7 @@
 </nav>
 <script src="./skins/index/base.js"></script>
 <script src="./skins/index/package.js"></script>
-<script src="./skins/index/ceh.js"></script>
+<!-- <script src="./skins/index/ceh.js"></script> -->
 <script>
     seajs.use('common.js', function (init) {
         init();
