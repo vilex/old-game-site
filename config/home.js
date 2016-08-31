@@ -4,20 +4,20 @@
 // 轮播图
 var carouselFigure = [
 		{
-			"img" : "skins/home/4-160R91F13c50.jpg",
-			"link": "#"
+			"img" : "skins/home/10000001-1.jpg",
+			"link": "g-sm.html?id=10000001"
 		},
 		{
-			"img" : "skins/home/4-160R6114ZU59.jpg",
-			"link": "#"
+			"img" : "skins/home/10000003-1.jpg",
+			"link": "g-sm.html?id=10000003"
 		},
 		{
-			"img" : "skins/home/4-160R21K246257.jpg",
-			"link": "#"
+			"img" : "skins/home/10000009-1.jpg",
+			"link": "g-sm.html?id=10000009"
 		},
 		{
-			"img" : "skins/home/4-160QQ15J90-L.jpg",
-			"link": "#"
+			"img" : "skins/home/10000010-1.jpg",
+			"link": "g-sm.html?id=10000010"
 		}
 ]
 
