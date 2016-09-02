@@ -4,12 +4,12 @@
 // 轮播图
 var carouselFigure = [
 		{
-			"img" : "skins/home/10000001-1.jpg",
-			"link": "g-sm.html?id=10000001"
+			"img" : "content/games/10000012/wr/title.jpg",
+			"link": "g-sm.html?id=10000012"
 		},
 		{
-			"img" : "skins/home/10000003-1.jpg",
-			"link": "g-sm.html?id=10000003"
+			"img" : "content/games/10000013/wr/title.jpg",
+			"link": "g-sm.html?id=10000013"
 		},
 		{
 			"img" : "skins/home/10000009-1.jpg",
@@ -24,24 +24,24 @@ var carouselFigure = [
 // 最新上架
 var newest = [
 	{
-		"icon":"skins/home/4-160S00929440-L.jpg",
-		"link":"g-sm.html",
-		"name":"name"
+		"icon":"content/games/10000014/wr/icon.jpg",
+		"link":"g-sm.html?id=10000014",
+		"name":"看你有多色"
 	},
 	{
-		"icon":"skins/home/14707139017434.jpg",
-		"link":"g-sm.html",
-		"name":"name"
+		"icon":"content/games/10000015/wr/icon.jpg",
+		"link":"g-sm.html?id=10000015",
+		"name":"一笔画线"
 	},
 	{
-		"icon":"skins/home/4-160R60931500-L.jpg",
-		"link":"g-sm.html",
-		"name":"name"
+		"icon":"content/games/10000016/wr/icon.jpg",
+		"link":"g-sm.html?id=10000016",
+		"name":"围住神经猫"
 	},
 	{
-		"icon":"skins/home/4-160R40953310-L.jpg",
-		"link":"g-sm.html",
-		"name":"name"
+		"icon":"content/games/10000006/wr/icon.jpg",
+		"link":"g-sm.html?id=10000006",
+		"name":"小蜜蜂"
 	}
 ] 
 
@@ -130,6 +130,28 @@ var tags = [
 ]
 
 // 编辑推荐
+var recommend1 = [
+	{
+		"icon":"content/games/10000001/wr/icon.jpg",
+		"link":"g-sm.html?id=10000001",
+		"name":"2048"
+	},
+	{
+		"icon":"content/games/10000002/wr/icon.jpg",
+		"link":"g-sm.html?id=10000002",
+		"name":"暴打神经猫"
+	},
+	{
+		"icon":"content/games/10000003/wr/icon.jpg",
+		"link":"g-sm.html?id=10000003",
+		"name":"一个都不能死"
+	},
+	{
+		"icon":"content/games/10000004/wr/icon.jpg",
+		"link":"g-sm.html?id=10000004",
+		"name":"最强电灯泡"
+	}
+]
 var recommend = [
 	{
 		"icon":"skins/home/4-160S00929440-L.jpg",

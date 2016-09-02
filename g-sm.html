@@ -61,12 +61,17 @@
 
 <header class="header po-ov">
     <div class="grset-mod">
-        <div class="pic"><img src="./skins/g-sm/14573225132717.jpg" alt=""></div>
+        <div class="pic">
+            <script type="text/javascript">
+                var ele = '<img src="'+basepath + nono.id +'/wr/title.jpg">';
+                document.write(ele);
+            </script>
+            <!-- <img src="./skins/g-sm/14573225132717.jpg" alt=""> -->
+        </div>
         <div class="game-info">
-            <figure id="ipc">
+            <figure>
                 <script type="text/javascript">
-                    var id = GetQueryString('id');
-                    ipc.innerHTML = '<img src="' + basepath + id + '/icon.jpg" alt="">';
+                    document.write('<img src="' + basepath + nono.id + '/wr/icon.jpg" alt="">')
                 </script>
                 <figcaption>
                     <h4>战斗补砖块</h4>
@@ -87,11 +92,15 @@
     <section class="col-box game-info-mod">
         <h4>游戏介绍</h4>
 
-        <p></p><p>战斗补砖块，哪里空缺补哪里！</p><p></p>
+        <p></p><p>
+            <script type="text/javascript">
+                document.write(gamelist[nono.id]['gdes']);
+            </script>
+            <!-- 战斗补砖块，哪里空缺补哪里！ -->
+        </p><p></p>
         <div id="isg" class="re-red-btn">
             <script type="text/javascript">
-                var id = GetQueryString('id');
-                isg.innerHTML = '<a href="' + basepath + id + '/index.html" title="">开始游戏</a>';
+                document.write('<a href="' + basepath + nono.id + '/index.html" title="">开始游戏</a>');
             </script>
         </div>
 
@@ -103,7 +112,19 @@
         <div class="game-picture" id="j_imglist_wrap" style="overflow:hidden;">
             <div id="j_imglist" class="game-pic-scroll" style="width: 577px; transform: translate3d(0px, 0px, 0px); transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1);">
                 <ul>
-                    <li><img src="./skins/g-sm/14573225178814.jpg" style="margin:0 auto" alt="" border="0"></li><li><img src="./skins/g-sm/14573225174277.jpg" style="margin:0 auto" alt="" border="0"></li><li><img src="./skins/g-sm/14573225189933.jpg" style="margin:0 auto" alt="" border="0"></li><li><img src="./skins/g-sm/14573225182579.jpg" style="margin:0 auto" alt="" border="0"></li>                </ul>
+                    <script type="text/javascript">
+                        var ele = '';
+                        for(var i = 1; i < 5; i++){
+                            ele += '<li><img src="'+basepath+nono.id+'/wr/cut-'+i+'.jpg" style="margin:0 auto;" border="0"></li>';    
+                        }
+                        document.write(ele);
+                        
+                    </script>
+                    <!-- <li>
+                    <img src="./skins/g-sm/14573225178814.jpg" style="margin:0 auto" alt="" border="0">
+                    </li>
+
+                    <li><img src="./skins/g-sm/14573225174277.jpg" style="margin:0 auto" alt="" border="0"></li><li><img src="./skins/g-sm/14573225189933.jpg" style="margin:0 auto" alt="" border="0"></li><li><img src="./skins/g-sm/14573225182579.jpg" style="margin:0 auto" alt="" border="0"></li> -->                </ul>
             </div>
         <div style="left: 2px; bottom: 2px; right: 2px; height: 5px; position: absolute; z-index: 10; pointer-events: none;"><div style="height: 5px; position: absolute; z-index: 10; pointer-events: none; border-radius: 0px; transition: cubic-bezier(0.33, 0.66, 0.66, 1); width: 367px; background-color: rgba(0, 0, 0, 0.498039);"></div></div></div>
     </section>

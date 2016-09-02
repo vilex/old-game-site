@@ -16,6 +16,7 @@
 
 <!-- config file -->
 <script type="text/javascript" src="config/home.js"></script>
+<script type="text/javascript" src="config/bjtj.js"></script>
 </head>
 <body>
 <script type="text/javascript" src="./skins/home/js.php"></script><script type="text/javascript" src="./skins/home/base.php"></script><script>var admPingUrl="http://gg.18183.com/ping.gif?t?=1?t?=31,273,0,0|31,274,0,0|31,272,0,0?t?=31?t?=1472544641?t?=39032764711940597074";newhanawa.init();</script><div style="display:none;"><img src="./skins/home/ping.gif"></div>
@@ -140,24 +141,27 @@
     <section class="col-box">
         <div class="re_tit"><span></span><a href="http://www.h5uc.com/game/new-18-1.html" title="最新h5小游戏">全部&gt;&gt;</a><h4>编辑推荐</h4></div>
 
+        <script type="text/javascript">
+            var index = 0; var ele = '';
+            for(var key in bjtj){
+                if(index == 0){
+                    ele += '<ul class="mod-game clear" style="border-bottom:none">';
+                }
+                ele += '<li><a href="g-sm.html?id='+key+'"><img src="'+bjtj[key]['icon']+'" ><p>'+bjtj[key]['name']+'</p></a></li>';
+                index++;
+                if(index == 4){
+                    ele += '</ul>';
+                    ele += '<div class="hr_10"></div>';
+                    ele += '<ul class="mod-game clear">';
+                }
+                if(index == 8){
+                    ele += '</ul>'
+                }
+            }
+            // console.log(ele);
+            document.write(ele);
+        </script>
 
-
-
-
-<ul class="mod-game clear" style="border-bottom:none">
-<li><a href="http://www.h5uc.com/news/201510/217.html" title=""><img src="./skins/home/3-160Q21552243O.jpg" alt=""><p>游戏鸡下载</p></a></li>
-<li><a href="http://www.h5uc.com/game-536.html" title=""><img src="./skins/home/14393689318722.png" alt=""><p>合体积木</p></a></li>
-<li><a href="http://www.h5uc.com/game-725.html" title=""><img src="./skins/home/14479299815509.jpg" alt=""><p>雪怪酷跑</p></a></li>
-<li><a href="http://www.h5uc.com/game-672.html" title=""><img src="./skins/home/3-15102G133330-L.jpg" alt=""><p>变形机大乱斗</p></a></li>
-</ul>   
-        <div class="hr_10"></div>
-
-<ul class="mod-game clear">
-<li><a href="http://www.h5uc.com/game-9429.html" title=""><img src="./skins/home/14619022723767.jpg" alt=""><p>飞碟偷小羊</p></a></li>
-<li><a href="http://www.h5uc.com/game-9494.html" title=""><img src="./skins/home/14651840437866.jpg" alt=""><p>跳伞吃糖果</p></a></li>
-<li><a href="http://www.h5uc.com/game-9418.html" title=""><img src="./skins/home/14615554143230.jpg" alt=""><p>射鸡</p></a></li>
-<li><a href="http://www.h5uc.com/game-9526.html" title=""><img src="./skins/home/14672579975726.jpg" alt=""><p>素食兔子</p></a></li>
-</ul>
 
 
 
