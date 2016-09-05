@@ -1,0 +1,19 @@
+<font>
+  <info face="font_36_completed" size="36" bold="1" italic="0" charset="" unicode="" stretchH="100" smooth="1" aa="1" padding="2,2,2,2" spacing="0,0" outline="0"/>
+  <common lineHeight="36" base="29" scaleW="128" scaleH="128" pages="1" packed="0"/>
+  <pages>
+    <page id="0" file="font_36_completed.png"/>
+  </pages>
+  <chars count="9">
+    <char id="67" x="2" y="2" width="29" height="35" xoffset="0" yoffset="0" xadvance="24" page="0" chnl="15"/>
+    <char id="79" x="33" y="2" width="34" height="35" xoffset="0" yoffset="0" xadvance="29" page="0" chnl="15"/>
+    <char id="77" x="69" y="2" width="39" height="35" xoffset="0" yoffset="0" xadvance="34" page="0" chnl="15"/>
+    <char id="80" x="2" y="39" width="30" height="35" xoffset="0" yoffset="0" xadvance="25" page="0" chnl="15"/>
+    <char id="76" x="34" y="39" width="28" height="35" xoffset="0" yoffset="0" xadvance="23" page="0" chnl="15"/>
+    <char id="69" x="64" y="39" width="28" height="35" xoffset="0" yoffset="0" xadvance="23" page="0" chnl="15"/>
+    <char id="84" x="94" y="39" width="30" height="35" xoffset="0" yoffset="0" xadvance="25" page="0" chnl="15"/>
+    <char id="68" x="2" y="76" width="29" height="35" xoffset="0" yoffset="0" xadvance="25" page="0" chnl="15"/>
+    <char id="47" x="33" y="76" width="29" height="35" xoffset="3" yoffset="0" xadvance="30" page="0" chnl="15"/>
+    <char id="32" x="0" y="0" width="0" height="0" xoffset="3" yoffset="0" xadvance="18" page="0" chnl="15"/>
+  </chars>
+</font>
