@@ -9,36 +9,33 @@ var workbook = XLSX.readFile('../docs/game.xlsx',{type:'binary'});
 
 
 // 编辑推荐
-var bjtj = workbook.Sheets['编辑推荐'];
-var bjtj_obj = {};
-for(var i = 2; i < 10; i++){
-    var key = bjtj['A'+i]['w'];
-    bjtj_obj[key] = {};
-    bjtj_obj[key].name = bjtj['B'+i]['w'];
-    bjtj_obj[key].type = bjtj['C'+i]['w'];
-    bjtj_obj[key].des = bjtj['D'+i]['w'];
-    bjtj_obj[key].icon = bjtj['E'+i]['w'];
-}
-
-bjtj_obj = 'var bjtj = ' + JSON.stringify(bjtj_obj);
-write('../../config/bjtj.js',bjtj_obj);
+output('编辑推荐',10,'bjtj');
 
 // 更多小游戏
-var gdxyx = workbook.Sheets['更多小游戏'];
-var gdxyx_obj = {};
-for(var i = 2; i < 17; i++){
-    var key = gdxyx['A'+i]['w'];
-    gdxyx_obj[key] = {};
-    gdxyx_obj[key].name = gdxyx['B'+i]['w'];
-    gdxyx_obj[key].type = gdxyx['C'+i]['w'];
-    gdxyx_obj[key].des = gdxyx['D'+i]['w'];
-    gdxyx_obj[key].icon = gdxyx['E'+i]['w'];
+output('更多小游戏',17,'gdxyx');
+
+// 最新小游戏合集
+output('最新小游戏合集',13,'zxxyxhj');
+
+// 找游戏
+output('最新小游戏合集',13,'zyx');
+
+// 输出表
+function output(sheetName,len,oname){
+    var sheet = workbook.Sheets[sheetName];
+    var sheet_obj = {};
+    for(var i = 2; i < len; i++){
+        var key = sheet['A'+i]['w'];
+        sheet_obj[key] = {
+            'name' : sheet["B"+i]['w'],
+            'type' : sheet["C"+i]['w'],
+            'des'  : sheet["D"+i]['w'],
+            'icon' : sheet["E"+i]['w']
+        }
+    }
+    sheet_obj = 'var '+ oname +' = ' + JSON.stringify(sheet_obj);
+    write('../../config/'+oname+'.js' , sheet_obj);
 }
-
-gdxyx_obj = 'var gdxyx = ' + JSON.stringify(gdxyx_obj);
-write('../../config/gdxyx.js',gdxyx_obj);
-
-
 
 // 写文件
 function write(name,data){
