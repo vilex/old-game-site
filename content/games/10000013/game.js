@@ -56,7 +56,8 @@ function randomizeAnimFrame(e) {
     e.currentAnimationFrame = Math.floor(30 * Math.random())
 }
 function createSponsorLogo() {
-    spilLogo = createButton(160, 322, .8, sponsorLogoFrame, sponsorClick, null , null )
+    
+    spilLogo = createButton(160, 322, .8, sponsorLogoFrame, function(){}, null , null )
 }
 function showSponsorLogo(e, t, n, r, i, s, o, u) {
     spilLogo || createSponsorLogo();
@@ -2051,7 +2052,7 @@ var isNeedFpsMeter = !1
   , isDesignerSettingsPreferred = !0
   , STORAGE_PREFIX = "Soccer23"
   , isMobileOnlyResize = !1
-  , SPONSOR_URL = "http://www.cynono.com/home.html"
+  , SPONSOR_URL = "http://www.cynono.com/index.html"
   , PRELOADER_LOGO = "logo_spele.png"
   , HERO_TYPE = 0
   , HERO_DOC_TYPE = 1
