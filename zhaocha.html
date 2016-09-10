@@ -21,7 +21,10 @@
     </script>
     <script src="skins/operation/maruko.js"></script>
 
-<script src="chrome-extension://oofgjnalpjodkfmfomihdlchiiacnman/injectScripts.min.js"></script></head>
+<!-- <script src="chrome-extension://oofgjnalpjodkfmfomihdlchiiacnman/injectScripts.min.js"></script> -->
+<script src="config/zhaochaxilie.js" type="text/javascript" charset="utf-8" async defer></script>
+<!-- <script src="config/zhaochaxilie.js" type="text/javascript" charset="utf-8"></script> -->
+</head>
 <body>
 <script type="text/javascript" src="skins/operation/js.php"></script><script type="text/javascript" src="skins/operation/base.php"></script><script>var admPingUrl="http://eezdx.erc.18183.com/ping.gif?t?=1?t?=31,273,0,0|31,274,0,0|31,272,0,0?t?=31?t?=1472806817?t?=39032764711940597074";newhanawa.init();</script><div style="display:none;"><img src="skins/operation/ping.gif"></div>
     <script>newhanawa.createAdBanner("xtwaph", 2);</script>
@@ -34,16 +37,32 @@
     <section class="col-box bjrec-mod-2">
         <div class="tit">找茬系列小游戏</div>
         <ul class="clear">
-                            <li>
-                    <div class="pd">
-                        <a class="c" href="g-sm.html?id=10000031">
-                            <img src="http://imga3.5054399.com/upload_pic/2015/3/5/4399_11083794655.jpg" alt="校花来找茬">
-                            <h4>校花来找茬</h4>
-                            <div class="lx"><span>休闲</span></div>
-                            <p><i>1320</i>人在玩</p>
-                        </a>
-                    </div>
-                </li>
+                <script type="text/javascript">
+                    var ele = '';
+                    for(var key in zhaochaxilie){
+                        ele += '<li>';
+                        ele += '<div class="pd">';
+                        ele += '<a class="c" href="g-sm.html?id='+key+'">';
+                        ele += '<img src="'+zhaochaxilie[key]['icon']+'" alt="校花来找茬">';
+                        ele += '<h4>'+zhaochaxilie[key]['name']+'</h4>';
+                        ele += '<div class="lx"><span>'+zhaochaxilie[key]['type']+'</span></div>';
+                        ele += '<p><i>1320</i>人在玩</p>';
+                        ele += '</a>';
+                        ele += '</div>';
+                        ele += '</li>';
+                    }
+                    document.write(ele);
+                </script>
+                
+                    
+                        
+                            
+                            
+                            
+                            
+                        
+                    
+                
                            <!--  <li>
                     <div class="pd">
                         <a class="c" href="http://www.h5uc.com/game-321.html">
@@ -149,7 +168,7 @@
 </nav>
 <script src="skins/operation/base.js"></script>
 <script src="skins/operation/package.js"></script>
-<script src="skins/operation/ceh.js"></script>
+<!-- <script src="skins/operation/ceh.js"></script> -->
 <script>
     seajs.use('common.js', function (init) {
         init();
