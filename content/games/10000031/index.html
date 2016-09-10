@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, height=device-height"/>
+	<title>校花来找茬小游戏,在线玩,3366小游戏</title><meta name="description" content="校花来找茬小游戏在线玩,更多好玩小游戏尽在m.3366.com" /><meta name="keywords" content="校花来找茬,校花来找茬小游戏,在线玩" />
+	<link type="text/css" href="style/style.css" rel="stylesheet" />
+	<!-- <script>document.domain = 'cynono.com';</script> -->
+ <script src="js/zepto.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="mainWrp">
+		<section id="startScene" class="scene">
+			<header>
+				<div class="ssLogo images">3366小游戏x课程格子</div>
+				<div class="ssXh images">校花来找茬</div>
+			</header>
+			<a id="startEasyGame_btn" class="btn images" href="javascript:;" ontouchstart="return true;">天使模式</a>
+			<a id="startGame_btn" class="btn images" href="javascript:;" ontouchstart="return true;">恶魔模式</a>
+			<a id="moreGame_btn" class="btn images" href="javascript:;" onclick="clickMore();">更多游戏</a>
+			<footer></footer>
+		</section>
+		<section id="gameScene" class="scene">
+			<header style="margin-top: 30px;">
+				<div id="currLevel" class="images">1</div>
+			</header>
+			<section>
+				<div> 
+					<div class="gsDiffNum conflict normalMode">-请找出<span class="totalNum">1</span>处不同-</div>
+					<div class="gsDiffNum conflict easyMode">-共<span class="totalNum">1</span>处不同，请找出<span id="passTotalNum">1</span>处-</div>
+					<div class="progressbox">
+						 <div class="progress" style="width:300px;float:left;">
+							<div class="progress-bar" id="progressbar"></div>
+						 </div>
+						 <div class="timecounter">
+							<span id="timeshow">60</span>s
+						 </div>	
+					</div>
+					<div class="gsInfo">共找<span id="clickNum">0</span>次，正确<span id="correctNum">0</span>次，正确率<span id="correctPecent">0</span>%</div> 
+				</div>
+				<div class="picboxWrp">
+					<div class="picbox" id="picbox">
+						<div class="piccell" id="leftpic">
+						</div>
+						<div  class="piccell" id="rightpic">
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section id="overScene" class="scene">
+			<header><span class="osBanner images"></span></header>
+			<div class="osResult"></div>
+			<div class="osController">
+				<a id="again_btn" class="btn images" href="javascript:;">再来一局</a>
+				<a id="next_btn" class="btn images" href="javascript:;">下一关</a>
+				<a id="share_btn" class="btn images" href="javascript:;" onclick="clickMore();">更多游戏</a>
+				<a id="seekHelp_btn" class="btn images" href="javascript:;" onclick="clickMore();">更多游戏</a>
+				<a id="more_btn" class="btn images" href="javascript:;" onclick="clickMore();">更多游戏</a>
+			</div>
+			<div id="one" class="osMainContent">
+				<div class="oneTip">这位校花是 <span class="school"></span> 的 <span class="name"></span> <br/></div>
+				<div><a href="javascript:;"><img src="" alt="" /></a></div>
+			</div>
+			<div id="ones" class="osMainContent">
+				<div class="oTip"></div>
+				<div id="photos">
+					<a id="left_btn" class="arrow" href="javascript:;"><span class="images">向左</span></a>
+					<div id="girlListWrp">
+						<ul id="girlList">
+						</ul>
+					</div>
+					<a id="right_btn" class="arrow" href="javascript:;"><span class="images">向右</span></a>
+				</div>
+			</div>
+			 
+		</section>
+	</div>
+<input id="bt-game-id" type="hidden" value="21-beauty">
+	<script src="js/data.js" id="gamedata" type="text/javascript"></script>
+	<script src="js/game.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function(){
+		startScene.start();
+	});
+	</script>
+	<script language=javascript>
+		shareData = {
+			tTitle: '校花来找茬【3366小游戏】',
+			tContent: document.title
+		}
+	function goHome(){
+		//more_3366()
+		try{parent.moregame();}catch(e){}
+	}
+	function clickMore(){
+		//more_3366()
+		try{parent.moregame();}catch(e){}
+	}
+	function share(){
+		 share_3366()
+	}
+    var btGame=$(window);
+	 btGame.sizeRegulator = (function() {
+		var currentWidth, currentHeight, $window = $(window), currentSelector = "", rate = 1;
+		var loop = null;
+		return {
+			"setLoopResize": function(duration) {
+				if (!loop) {
+					loop = setInterval(function() {
+						$window.resize();
+					}, duration);
+				}
+			}
+			,"removeLoopResize": function() {
+				clearInterval(loop);
+				loop = null;
+			}
+			,"fitToWindow": function(width, height, selector) {
+				var windowWidth = $window.width()
+					,windowHeight = $window.height();
+				if (!(currentWidth == windowWidth && currentHeight == windowHeight)) {
+					var $target = $(selector);
+					rate = Math.min(windowHeight/height, windowWidth/width);
+					$target.css({
+						"transform": "scale("+rate+")"
+						,"-webkit-transform": "scale("+rate+")"
+						,"-moz-transform": "scale("+rate+")"
+						,"-o-transform": "scale("+rate+")"
+						,"-ms-transform": "scale("+rate+")"
+						,"top": Math.round((windowHeight-height*rate)/2).toString()+"px"
+						,"left": Math.round((windowWidth-width*rate)/2).toString()+"px"
+					});
+					currentWidth = windowWidth;
+					currentHeight = windowHeight;
+				}
+				return rate;
+			}
+		}
+	})();
+	$(window).resize(function() {
+		btGame.sizeRegulator.fitToWindow(640, 960, "#mainWrp");
+	});
+	$(function(){
+		$(window).resize();
+		btGame.sizeRegulator.setLoopResize(1000);
+		btGame.shareSinaWithIcon = true;
+		 
+	}) 
+	</script>
+</body>﻿<script type="text/javascript">
+var gameOption =
+{
+	gameid : 30297,
+	gamename : "校花来找茬",
+	gamepath : "h5/2014/xhlzc/game.htm",
+	isrecommend : 0,
+	adspos : 2,
+	scorecmp : 2
+};
+
+// var jsUrl;
+// if(window.Android && Android.getJsPath){
+// 	jsUrl = Android.getJsPath();
+// }
+// if(!jsUrl){
+// 	jsUrl = "./gameapi_3366.js";
+// }
+// document.write('<script type="text/javascript" src="'+jsUrl+'"><'+'/script>');
+
+</script>
+
+</html>
