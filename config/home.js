@@ -4,8 +4,8 @@
 // 轮播图
 var carouselFigure = [
 		{
-			"img" : "content/games/10000012/wr/title.jpg",
-			"link": "g-sm.html?id=10000012"
+			"img" : "content/games/10000033/wr/title.jpg",
+			"link": "g-sm.html?id=10000033"
 		},
 		{
 			"img" : "content/games/10000013/wr/title.jpg",
