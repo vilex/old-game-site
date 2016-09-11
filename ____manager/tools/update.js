@@ -23,6 +23,9 @@ output('最新小游戏合集',13,'zyx');
 // 找游戏
 output('找茬系列',4,'zhaochaxilie');
 
+// 全部编辑推荐
+output('全部编辑推荐',12,'quanbubianjituijian');
+
 // 输出表
 function output(sheetName,len,oname){
     var sheet = workbook.Sheets[sheetName];
