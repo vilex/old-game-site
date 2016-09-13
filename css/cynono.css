@@ -6,3 +6,6 @@ body {
 	text-align: center;	
 	font-family: "微软雅黑";
 }
+.area {
+	border: 1px solid #ccc;
+}
