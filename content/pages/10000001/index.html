@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>中秋节|中秋节快乐|中秋节带你涨姿势</title>
+	<link rel="stylesheet" type="text/css" href="css/iSlider.css">
+	<style type="text/css">
+		@keyframes ARROW {
+			0% {
+				margin-bottom: 0px;
+			}
+			50% {
+				margin-bottom: 60px;
+			}
+			100% {
+				margin-bottom: 0px;
+			}
+		}
+		@-webkit-keyframes ARROW {
+			0% {
+				margin-bottom: 0px;
+			}
+			50% {
+				margin-bottom: 60px;
+			}
+			100% {
+				margin-bottom: 0px;
+			}
+		}
+		@-moz-keyframes ARROW {
+			0% {
+				margin-bottom: 0px;
+			}
+			50% {
+				margin-bottom: 60px;
+			}
+			100% {
+				margin-bottom: 0px;
+			}
+		}
+		@-ms-keyframes ARROW {
+			0% {
+				margin-bottom: 0px;
+			}
+			50% {
+				margin-bottom: 60px;
+			}
+			100% {
+				margin-bottom: 0px;
+			}
+		}
+		@-o-keyframes ARROW {
+			0% {
+				margin-bottom: 0px;
+			}
+			50% {
+				margin-bottom: 60px;
+			}
+			100% {
+				margin-bottom: 0px;
+			}
+		}
+
+
+		html,body{
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			/*background-size: 100% 100%;
+			background-image: url("img/bg.jpg");
+			background-repeat: no-repeat;
+			background-attachment: fixed;*/
+			overflow: hidden;
+			text-align: center;
+		}
+		footer {
+			position: fixed;
+			bottom: 10px;
+			text-align: center;
+			width: 100%;
+		}
+		footer > img {
+			left: 50%;
+			animation:ARROW 1s infinite linear ;
+			-webkit-animation:ARROW 1s infinite linear ;
+			-moz-animation:ARROW 1s infinite linear ;
+			-ms-animation:ARROW 1s infinite linear ;
+			-o-animation:ARROW 1s infinite linear ;
+		}
+		
+		.me{
+			position: fixed;
+			left: 20px;
+			top: 20px;
+			color: #FFF;
+			font-size: 3rem;
+			opacity: .5;
+		}
+
+		
+	</style>
+
+</head>
+<body>
+	<script type="text/javascript">
+		function IsPC() {
+		    var userAgentInfo = navigator.userAgent;
+		    var Agents = ["Android", "iPhone",
+		                "SymbianOS", "Windows Phone",
+		                "iPad", "iPod"];
+		    var flag = true;
+		    for (var v = 0; v < Agents.length; v++) {
+		        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+		            flag = false;
+		            break;
+		        }
+		    }
+		    return flag;
+		}
+
+		if(IsPC()){
+			window.location.href = 'http://www.cynono.com/tzhongqiu.html';
+		}else{
+		}
+	</script>
+	<div id="iSlider-wrapper" style="width:100%;height:100%;"></div>
+	
+	<footer>
+		<img src="img/arrow.png">
+	</footer>
+	<div class="me">
+		<p>QQ:29727886</p>
+	</div>
+	<audio autoplay="autoplay" controls="controls">
+		<source src="y/bg.mp3" type="audio/mpeg">
+		<source src="y/bg.ogg" type="audio/mpeg">
+	</audio>
+	<script type="text/javascript" src="js/iSlider.min.js"></script>
+	<script type="text/javascript" src="js/iSlider.animate.min.js"></script>
+	<script type="text/javascript">
+		var $get = function(id){
+			return document.getElementById(id);
+		}
+		var list = [];
+		for(var i = 1; i < 8; i++){
+			var ob = {};
+			ob.width = '100%';
+			ob.height = '100%';
+			ob.content = 'img/page'+i+'.jpg';
+			list.push(ob);
+		}
+		var S = new iSlider({
+	        dom: $get('iSlider-wrapper'),
+	        data: list,
+	        isAutoplay: 0,
+	        isLooping: 1,
+	        isOverspread: 1,
+	        animateTime: 800,
+	        isVertical: true
+	    });
+	</script>
+</body>
+</html>
