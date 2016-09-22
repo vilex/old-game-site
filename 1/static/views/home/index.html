@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home view</title>
+	<link rel="stylesheet" type="text/css" href="./css/nono.css">
+	<link rel="stylesheet" type="text/css" href="css/iSlider.css">
+</head>
+<body>
+	<div id="header-solider"></div>
+	<header>
+		header
+	</header>
+	<div class="page c1"></div>
+	<div class="page c2"></div>
+	<div class="page c3"></div>
+	<div class="page c4"></div>
+	<div class="page c5"></div>
+
+	<script type="text/javascript" src="js/iSlider.min.js"></script>
+	<script type="text/javascript" src="js/iSlider.animate.min.js"></script>
+	<script type="text/javascript">
+		var $get = function(id){
+			return document.getElementById(id);
+		}
+		var list = [];
+		for(var i = 1; i < 8; i++){
+			var ob = {};
+			ob.width = '100%';
+			ob.height = '100%';
+			ob.content = 'img/page'+i+'.jpg';
+			list.push(ob);
+		}
+		var S = new iSlider({
+	        dom: $get('header-solider'),
+	        data: list,
+	        isAutoplay: 0,
+	        isLooping: 1,
+	        isOverspread: 1,
+	        animateTime: 800,
+	        isVertical: true
+	    });
+	</script>
+</body>
+</html>
