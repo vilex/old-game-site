@@ -7,17 +7,6 @@ html,body{
 	width: 100%;
 	height: 100%;
 }
-header{
-	width: 100%;
-	height: 10%;
-	background-color: rgb(37, 35, 35);
+body{
+	background-image: url('http://7xizmu.com2.z0.glb.qiniucdn.com/page-v2-office15.jpg');
 }
-.page{
-	width: 100%;
-	height: 100%;
-}
-.c1{ background-color: rgb(89,61,67); }
-.c2{ background-color: rgb(56,13,49); }
-.c3{ background-color: rgb(114,111,128); }
-.c4{ background-color: rgb(178,190,126); }
-.c5{ background-color: rgb(227,160,93); }
