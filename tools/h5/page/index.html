@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Tool</title>
+	<script type="text/javascript" src="./js/nono.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		document.addEventListener('click',function(){
+		    requestFullScreen();
+		    //5秒钟自动退出全屏
+		    setTimeout(function(){
+		        exitFullscreen();
+		    },5000);
+		},false);
+	</script>
+</body>
+</html>
