@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Page Tool</title>
-	<script type="text/javascript" src="./js/nono.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/nono.css">
+	<link rel="stylesheet" type="text/css" href="css/remodal.css">
+	<link rel="stylesheet" type="text/css" href="css/remodal-default-theme.css">
+	
+
 </head>
 <body>
+	
+	<div class="nav">
+
+		<input type="input">
+		<button type="button" onclick="requestFullScreen();">全屏编辑</button>
+	</div>
+	<div class="container">
+		<div class="component">
+			
+		</div>
+		<div class="content">
+					
+		</div>
+		<div class="page">
+			
+		</div>	
+	</div>
+
+	
+
+
+	
+	
+	<div class="remodal" data-remodal-id="modal">
+	  <button data-remodal-action="close" class="remodal-close"></button>
+	  <h1>全屏编辑</h1>
+	  <p>
+	    全屏编辑会提高一些感官上效果，另外也能省出一些空间让你可以更专注的做自己的事情
+	  </p>
+	  <br>
+	  <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+	  <button data-remodal-action="confirm" class="remodal-confirm" onclick="requestFullScreen();">OK</button>
+	</div>
+
+	<!-- <a href="#modal">Call the modal with data-remodal-id="modal"</a> -->
+
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/nono.js"></script>
+	<script type="text/javascript" src="./js/remodal.js"></script>
+
 	<script type="text/javascript">
-		document.addEventListener('click',function(){
-		    requestFullScreen();
-		    //5秒钟自动退出全屏
-		    setTimeout(function(){
-		        exitFullscreen();
-		    },5000);
-		},false);
+		window.location.href = "#modal"
+		//window.showModalDialog('./isfull.html')
 	</script>
 </body>
 </html>
