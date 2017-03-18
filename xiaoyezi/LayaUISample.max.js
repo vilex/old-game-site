@@ -772,7 +772,7 @@ var Laya=window.Laya=(function(window,document){
 			Laya.init(LayaUISample.GWidth,LayaUISample.GHeight);
 			Laya.stage.bgColor="#000000";
 			Laya.stage.screenMode="vertical";
-			SoundManager.playMusic("res/sound/zjl_youdiantian.mp3");
+			SoundManager.playMusic("http://up.haoduoge.com:82/mp3/2016-04-02/1459605065.mp3");
 			var __res=[
 			{url:"res/atlas/comp.json",type:"atlas"},
 			{url:"config/pages.json",type:"json"}];
@@ -14067,7 +14067,7 @@ var Laya=window.Laya=(function(window,document){
 			else{
 				this.musicState=true;
 				this.frameLoop(1,this ,this.loopHandler);
-				SoundManager.playMusic("res/sound/zjl_youdiantian.mp3");
+				SoundManager.playMusic("http://up.haoduoge.com:82/mp3/2016-04-02/1459605065.mp3");
 			}
 		}
 
