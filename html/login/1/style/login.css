@@ -1,0 +1,63 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+
+.container{
+	width: 411px;
+	height: 469px;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	bottom:0;
+	left: 0;
+	right: 0; 
+	margin: auto;
+	overflow: hidden;
+}
+
+.login{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.login-bg{
+	position: absolute;
+	z-index: -1;
+}
+
+.login-btn{
+	position: relative;
+	top: 265px;
+}
+
+.login-input-container{
+	position: relative;
+    width: 289px;
+    height: 100px;
+    margin: 0 auto;
+    top: 152px;
+}
+
+.login-input{
+	width: 100%;
+    height: 40px;
+    padding: 0px 0px;
+    left: 42px;
+    margin-left: 9px;
+    background-color: transparent;
+    border: 0px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.login-usr{
+    margin-bottom: 66px;
+}
+
+.login-pwd{
+	
+}
+
